@@ -1,3 +1,7 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-export { Header, Footer };
+import Container from "postcss/lib/container";
+import Logo from "./Logo";
+import LogoutBtn from "./Header/LogoutBtn";
+import Input from "postcss/lib/input";
+export { Header, Footer, Container, Logo, LogoutBtn, Input };
