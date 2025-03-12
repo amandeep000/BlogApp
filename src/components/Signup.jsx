@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
@@ -13,6 +13,7 @@ const signup = () => {
   const { register, handleSubmit } = useForm();
 
   const Create = async (data) => {
+    console.log(data);
     setError("");
     try {
       const userData = await authService.createAccount(data);
@@ -66,7 +67,7 @@ const signup = () => {
               {...register("email", {
                 required: true,
                 validate: {
-                  matchPatern: (value) =>
+                  matchPattern: (value) =>
                     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
                       value
                     ) || "Email Address must a valid one",
@@ -80,7 +81,7 @@ const signup = () => {
               {...register("password", {
                 required: true,
                 validate: {
-                  matchPatern: (value) =>
+                  matchPattern: (value) =>
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/.test(
                       value
                     ) || "Enter a valid password",

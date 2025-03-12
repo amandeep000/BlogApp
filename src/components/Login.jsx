@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { data, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin } from "../store/authSlice";
 import { Button, Input, Logo } from "../components/index";
 import { useDispatch } from "react-redux";
@@ -58,7 +58,7 @@ const Login = () => {
               {...register("email", {
                 required: true,
                 validate: {
-                  matchPatern: (value) =>
+                  matchPattern: (value) =>
                     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
                       value
                     ) || "Email Address must a valid one",
@@ -72,7 +72,7 @@ const Login = () => {
               {...register("password", {
                 required: true,
                 validate: {
-                  matchPatern: (value) =>
+                  matchPattern: (value) =>
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/.test(
                       value
                     ) || "Enter a valid password",
